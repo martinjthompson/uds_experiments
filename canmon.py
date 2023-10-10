@@ -16,7 +16,8 @@ if __name__ == "__main__":
     while 1:
         msg = reader.get_message()
         if msg.arbitration_id not in seen:
-            print (msg)
+            if msg.is_rx:
+                print (msg)
             seen[msg.arbitration_id] = 1
             
     
